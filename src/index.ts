@@ -1,16 +1,23 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
+import routes from "./routes";
 
 dotenv.config();
 
 const PORT = process.env.PORT || 3000;
 
 const app = express();
+
+const corsOption = {
+    methods: "GET",
+}
+
+app.use(cors(corsOption));
 app.use(express.json());
-app.listen(PORT, function(){console.log(`Rodando ${PORT}`)});
-
-app.use(routes);
-
-app.use(function(req,res){
-    res.send("Rota desconhecida");
+app.listen(PORT,() =>{
+    console.log(`Rodando na porta ${PORT}`);
 })
+
+//define a rota para o pacote /routes
+app.use(routes);
