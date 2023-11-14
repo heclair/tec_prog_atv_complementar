@@ -1,4 +1,6 @@
 import { UfProps } from "../types";
+
+
 const ufs:UfProps[] = [
 {ibge:11,estado:'Rondônia',uf:'RO',regiao:'Região Norte',qtdmun:52},
 {ibge:12,estado:'Acre',uf:'AC',regiao:'Região Norte',qtdmun:22},
